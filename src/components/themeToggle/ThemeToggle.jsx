@@ -9,7 +9,7 @@ const ThemeToggle = () => {
 
   return (
     <div
-      className={`flex justify-between items-center w-10 h-5  rounded-full cursor-pointer relative ${
+      className={`flex justify-between items-center w-10 h-5 rounded-full cursor-pointer relative ${
         theme === "dark" ? "bg-white" : "bg-[#0f172a]"
       }`}
       onClick={toggle}

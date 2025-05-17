@@ -1,12 +1,10 @@
 @import "tailwindcss";
 
-@theme inline {
+@theme {
   --font-poppins: var(--font-poppins);
   --font-dmsans: var(--font-dm-sans);
   --font-nunito: var(--font-nunito);
 }
-
-
 
 :root {
   --bg: white;
