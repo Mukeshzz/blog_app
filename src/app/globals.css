@@ -1,4 +1,20 @@
-@import "tailwindcss";
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@layer base {
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+@layer theme{
+   html {
+    @apply font-sans;
+  }
+}
 
 @theme {
   --font-poppins: var(--font-poppins);
@@ -29,7 +45,7 @@ body {
   --bg: #0f172a;
   --textColor: #ddd;
   --softBg: #1f273a;
-  --softTextColor: #a6a6a6;
+  --softText: #a6a6a6;
 }
 
 a {
