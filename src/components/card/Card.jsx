@@ -5,7 +5,7 @@ import React from "react";
 const Card = () => {
   return (
     <div className="mb-[50px] flex gap-[50px] items-center">
-      <div className="flex-1 h-[350px] relative">
+      <div className="flex-1 h-[350px] relative hidden xl:flex">
         <Image src="/p1.jpeg" alt="" fill className="object-cover"/>
       </div>
       <div className="flex-1 flex flex-col gap-[30px]">

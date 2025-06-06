@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="mt-[50px] flex justify-between text-[var(--softText)] px-4 py-0">
+    <div className="mt-[50px] flex flex-col sm:flex-row gap-[50px] items-center justify-between text-[var(--softText)] px-4 py-0 ">
       <div className="flex-1 flex flex-col gap-[14px]">
         <div className="flex items-center gap-[10px]">
           <Image src="/logo.png" alt="blog spot" width={50} height={50} />
@@ -22,7 +22,7 @@ const Footer = () => {
           <Image src="/youtube.png" alt="" width={18} height={18} />
         </div>
       </div>
-      <div className="flex-1 flex justify-end gap-[100px]">
+      <div className="flex-1 flex sm:justify-end justify-between text-[14px] sm:text-[16px] w-full lg:gap-[100px] gap-[50px] ">
         <div className="flex flex-col gap-[10px] font-light">
           <span className="font-bold">Links</span>
           <Link href="/">Homepage</Link>
