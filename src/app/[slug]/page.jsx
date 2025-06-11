@@ -31,20 +31,20 @@ const SinglePage = () => {
         </div>
       </div>
       <div className="flex gap-[50px]">
-        <div className="flex- mt-[60px]">
-          <div className="text-[20px] font-light mb-5">
-            <p className="text-[18px]">
+        <div className="flex-5 mt-[60px]">
+          <div className="text-[20px] font-light">
+            <p className="text-[18px] mb-5">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Excepturi voluptates atque ad iste cum maiores quia sunt
               blanditiis obcaecati? Deleniti!
             </p>
             <h2>Lorem ipsum dolor sit amet.</h2>
-            <p className="text-[18px]">
+            <p className="text-[18px] mb-5">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Excepturi voluptates atque ad iste cum maiores quia sunt
               blanditiis obcaecati? Deleniti!
             </p>
-            <p className="text-[18px]">
+            <p className="text-[18px] mb-5">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Excepturi voluptates atque ad iste cum maiores quia sunt
               blanditiis obcaecati? Deleniti!
