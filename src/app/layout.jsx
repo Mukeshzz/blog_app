@@ -4,7 +4,7 @@ import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import ThemeProvider from "@/providers/ThemeProvider";
-
+import AuthProvider from "@/providers/AuthProvider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -35,17 +35,19 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.variable} ${nunito.variable}  ${dmsans.variable}`}
       >
-        <ThemeContextProvider>
-          <ThemeProvider>
-            <div className="main-container">
-              <div className="wrapper">
-                <Navbar />
-                {children}
-                <Footer />
+        <AuthProvider>
+          <ThemeContextProvider>
+            <ThemeProvider>
+              <div className="main-container">
+                <div className="wrapper">
+                  <Navbar />
+                  {children}
+                  <Footer />
+                </div>
               </div>
-            </div>
-          </ThemeProvider>
-        </ThemeContextProvider>
+            </ThemeProvider>
+          </ThemeContextProvider>
+        </AuthProvider>
       </body>
     </html>
   );

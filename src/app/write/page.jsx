@@ -10,8 +10,8 @@ const WritePage = () => {
 
   return (
     <div>
-      <input type="text" placeholder="Title" />
-      <div className="flex gap-5 h-[700px]">
+      <input type="text" placeholder="Title" className="p-[50px] text-[64px] border-none outline-none bg-transparent placeholder:text-[#b3b3b1]"/>
+      <div className="flex gap-5 h-[700px] relative">
         <button
           onClick={() => setOpen(!open)}
           className="h-9 w-9 rounded-[50%] bg-transparent border border-[var(--textColor)] flex justify-center items-center cursor-pointer"
@@ -19,7 +19,7 @@ const WritePage = () => {
           <Image src="/plus.png" alt="" height={16} width={16} />
         </button>
         {open && (
-          <div>
+          <div className="flex gap-5 bg-[var(--bg)] absolute z-[999] w-full left-[50px]">
             <button className="h-9 w-9 rounded-[50%] bg-transparent border flex justify-center items-center cursor-pointer border-[#1a8917]">
               <Image src="/image.png" alt="" height={16} width={16} />
             </button>
@@ -39,6 +39,7 @@ const WritePage = () => {
           className="w-full"
         />
       </div>
+      <button className="absolute top-[30px] right-[20px] py-[10px] px-[20px] border-none bg-[#1a8917] text-white cursor-pointer rounded-[20px]">Publish</button>
     </div>
   );
 };
