@@ -6,14 +6,17 @@ import React from "react";
 const LoginPage = () => {
   const { data, status } = useSession();
 
-  const router = useRouter()
+  const router = useRouter();
+
+  console.log(status);
+  
 
   if (status === "loading") {
     return <div>Loading...</div>;
   }
 
-  if(status === "authenticated"){
-    return router.push("/")
+  if (status === "authenticated") {
+    router.push("/");
   }
 
   return (

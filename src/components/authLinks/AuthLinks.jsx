@@ -1,20 +1,23 @@
 "use client";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useState } from "react";
 
 const AuthLinks = () => {
-  const auth = false;
+ 
 
   const [open, setOpen] = useState(false);
 
+  const {status} = useSession()
+
   return (
     <>
-      {auth === false ? (
+      {status === "unauthenticated" ? (
         <Link href="/login" className="hidden sm:block">Login</Link>
       ) : (
         <>
           <Link href="/write" className="hidden sm:block">Write</Link>
-          <span>Logout</span>
+          <span onClick={signOut}>Logout</span>
         </>
       )}
 
@@ -29,12 +32,12 @@ const AuthLinks = () => {
           <Link href="/homepage">Homepage</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
-          {auth === false ? (
+          {status === "unauthenticated" ? (
             <Link href="/login">Login</Link>
           ) : (
             <>
               <Link href="/write">Write</Link>
-              <span>Logout</span>
+              <span onClick={signOut}>Logout</span>
             </>
           )}
         </div>
