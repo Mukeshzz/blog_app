@@ -1,16 +1,35 @@
 "use client";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.bubble.css";
 
 const WritePage = () => {
+  const { status } = useSession();
+
   const [open, setOpen] = useState(true);
   const [value, setValue] = useState("");
+  const router = useRouter();
+
+  console.log(status);
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+
+  if (status === "authenticated") {
+    router.push("/");
+  }
 
   return (
     <div>
-      <input type="text" placeholder="Title" className="p-[50px] text-[64px] border-none outline-none bg-transparent placeholder:text-[#b3b3b1]"/>
+      <input
+        type="text"
+        placeholder="Title"
+        className="p-[50px] text-[64px] border-none outline-none bg-transparent placeholder:text-[#b3b3b1]"
+      />
       <div className="flex gap-5 h-[700px] relative">
         <button
           onClick={() => setOpen(!open)}
@@ -39,7 +58,9 @@ const WritePage = () => {
           className="w-full"
         />
       </div>
-      <button className="absolute top-[30px] right-[20px] py-[10px] px-[20px] border-none bg-[#1a8917] text-white cursor-pointer rounded-[20px]">Publish</button>
+      <button className="absolute top-[30px] right-[20px] py-[10px] px-[20px] border-none bg-[#1a8917] text-white cursor-pointer rounded-[20px]">
+        Publish
+      </button>
     </div>
   );
 };

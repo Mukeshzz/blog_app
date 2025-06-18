@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 const LoginPage = () => {
-  const { data, status } = useSession();
+  const { status } = useSession();
 
   const router = useRouter();
 
